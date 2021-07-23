@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Code Sistemas</h1>
+    
+    <div class="menu">
+      <div>
+        <a href="../index.html">Voltar</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="margin-top: 40px;">
+    <h2>Suas informações foram cadastradas</h2>
+
+    <p id="name"></p>
+    <p id="email"></p>
+    <p id="phone"></p>
+  </main>
+  <script>
+    const query = window.location.search;
+    console.log(query);
+    const params = new URLSearchParams(query);
+    const name = params.get('name');
+    const email = params.get('email'); 
+    const phone = params.get('phone');
+    document.getElementById('name').innerText = 'Nome: '+name
+    document.getElementById('email').innerText = 'Email: '+ email
+    document.getElementById('phone').innerText = 'Telefone: '+phone
+  </script>
+</body>
+
+</html>
